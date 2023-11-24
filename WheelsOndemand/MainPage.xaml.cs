@@ -2,23 +2,32 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        //int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void SignInButton_Click(object sender, EventArgs e)
         {
-            count++;
+            
+            //SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+        private void CreateAccountButton_Click(object sender, EventArgs e)
+        {
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            //SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+        private void BookNowButton_Click(object sender, EventArgs e)
+        {
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            //SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+        private void ContactUsButton_Click(object sender, EventArgs e)
+        {
+
+            //SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 }
