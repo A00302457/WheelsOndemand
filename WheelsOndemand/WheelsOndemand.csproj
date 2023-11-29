@@ -59,7 +59,49 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\Audi.jpg" />
+	  <None Remove="Resources\Images\BMW.jpg" />
+	  <None Remove="Resources\Images\camry.png" />
+	  <None Remove="Resources\Images\Dough.jpg" />
+	  <None Remove="Resources\Images\elentra.png" />
+	  <None Remove="Resources\Images\Lembergini.jpg" />
+	  <None Remove="Resources\Images\Mazda.jpg" />
+	  <None Remove="Resources\Images\Mercedes.jpg" />
+	  <None Remove="Resources\Images\Ram.jpg" />
+	  <None Remove="Resources\Images\rav4.png" />
+	  <None Remove="Resources\Images\rough.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Admin_Login.xaml.cs">
+	    <DependentUpon>Admin_Login.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Admin_Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CarList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Payment.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TopDeals.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\UserLoginSuccessful.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
