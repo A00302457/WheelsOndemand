@@ -6,24 +6,24 @@ public partial class TopDeals : ContentPage
 	{
 		InitializeComponent();
 	}
-    private void Morecar_Clicked(object sender, EventArgs e)
+    private async void Morecar_Clicked(object sender, EventArgs e)
     {
 
-        //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new CarList());
     }
-    private void Rav4_Clicked(object sender, EventArgs e)
-    {
-
-    }
-    private void Camry_Clicked(object sender, EventArgs e)
+    private async void Rav4_Clicked(object sender, EventArgs e)
     {
 
     }
-    private void Elentra_Clicked(object sender, EventArgs e)
+    private async void Camry_Clicked(object sender, EventArgs e)
     {
 
     }
-    private void Rough_Clicked(object sender, EventArgs e)
+    private async void Elentra_Clicked(object sender, EventArgs e)
+    {
+
+    }
+    private async void Rough_Clicked(object sender, EventArgs e)
     {
 
     }

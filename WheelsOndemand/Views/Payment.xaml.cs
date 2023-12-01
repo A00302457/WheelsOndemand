@@ -5,11 +5,15 @@ public partial class Payment : ContentPage
 	public Payment()
 	{
 		InitializeComponent();
-	}
-    private void Home_Click(object sender, EventArgs e)
+        
+
+    }
+    private async void Home_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        
+        //await ScrollMode.Auto
     }
     private void Submit_Click(object sender, EventArgs e)
     {

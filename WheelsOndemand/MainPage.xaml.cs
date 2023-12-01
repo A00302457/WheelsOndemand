@@ -1,4 +1,7 @@
-﻿namespace WheelsOndemand
+﻿using WheelsOndemand.Views;
+using Microsoft.Maui.Controls;
+
+namespace WheelsOndemand
 {
     public partial class MainPage : ContentPage
     {
@@ -9,10 +12,10 @@
             InitializeComponent();
         }
 
-        private void SignInButton_Click(object sender, EventArgs e)
+        private async void SignInButton_Click(object sender, EventArgs e)
         {
-            
-            //SemanticScreenReader.Announce(CounterBtn.Text);
+            await Navigation.PushAsync(new TopDeals());
+
         }
         private void CreateAccountButton_Click(object sender, EventArgs e)
         {

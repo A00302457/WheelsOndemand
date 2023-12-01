@@ -7,10 +7,11 @@ public partial class CarList : ContentPage
 		InitializeComponent();
 	
 	}
-    private void Audi_Click(object sender, EventArgs e)
+    private async void Audi_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
     private void Ram_Click(object sender, EventArgs e)
     {

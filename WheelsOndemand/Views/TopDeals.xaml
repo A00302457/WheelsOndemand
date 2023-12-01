@@ -11,12 +11,22 @@
         
            
         <Grid>
-            <Label Text="Top Deals" TextColor="OrangeRed" FontSize="Caption" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-            <ImageButton Source="rav4.png" VerticalOptions="Center" Clicked="Rav4_Clicked" />
-            <ImageButton Source="rough.png" VerticalOptions="Center" Clicked="Rough_Clicked"/>
-            <ImageButton Source="elentra.png" VerticalOptions="Center" Clicked="Elentra_Clicked"/>
-            <ImageButton Source="camry.png" VerticalOptions="Center" Clicked="Camry_Clicked"/>
-            
+            <StackLayout>
+                
+                    <Label Text="Top Deals" TextColor="OrangeRed"  FontSize="Header" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                    <ImageButton Source="rav4.png"  VerticalOptions="Center" Clicked="Rav4_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
+                
+                <Label Text="Rav 4 $100PD" TextColor="White" BackgroundColor="SkyBlue"  FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                <ImageButton Source="rough.png"  VerticalOptions="Center" Clicked="Rough_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
+                <Label Text="Nissan Rough $90PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+
+                <ImageButton Source="elentra.png" VerticalOptions="Center" Clicked="Elentra_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
+                <Label Text="Elentra $110PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+
+                <ImageButton Source="camry.png" VerticalOptions="Center" Clicked="Camry_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
+                <Label Text="Camry $130PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+
+            </StackLayout>
         </Grid>
            
        
