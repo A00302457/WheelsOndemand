@@ -8,29 +8,32 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
+
+        <Grid RowDefinitions="Auto, Auto, Auto, *, Auto, Auto, Auto"
+          ColumnDefinitions="*, *"
+          Padding="40">
+
+
+            <Label Text="             Top Deals" TextColor="OrangeRed" FontAttributes="Bold"  FontSize="Header" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
            
-        <Grid>
-            <StackLayout>
-                
-                    <Label Text="Top Deals" TextColor="OrangeRed"  FontSize="Header" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                    <ImageButton Source="rav4.png"  VerticalOptions="Center" Clicked="Rav4_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
-                
-                <Label Text="Rav 4 $100PD" TextColor="White" BackgroundColor="SkyBlue"  FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
-                <ImageButton Source="rough.png"  VerticalOptions="Center" Clicked="Rough_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
-                <Label Text="Nissan Rough $90PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+            <ImageButton Source="rav4.png"  VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Clicked="Rav4_Clicked" HeightRequest="200" WidthRequest="200" HorizontalOptions="Start"/>
+            <Label Text="Rav 4 $100PD" TextColor="SkyBlue" Grid.Row="2" Grid.Column="0"   FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+            
+            <ImageButton Source="rough.png"  VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Clicked="Rough_Clicked" HeightRequest="200" WidthRequest="200" HorizontalOptions="Start"/>
+            <Label Text="Nissan Rough $90PD" TextColor="SkyBlue"  Grid.Row="2" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
 
-                <ImageButton Source="elentra.png" VerticalOptions="Center" Clicked="Elentra_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
-                <Label Text="Elentra $110PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+            <ImageButton Source="elentra.png" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Clicked="Elentra_Clicked" HeightRequest="200" WidthRequest="200" HorizontalOptions="Start"/>
+            <Label Text="Elentra $110PD" TextColor="SkyBlue"  Grid.Row="4" Grid.Column="0" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
 
-                <ImageButton Source="camry.png" VerticalOptions="Center" Clicked="Camry_Clicked" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start"/>
-                <Label Text="Camry $130PD" TextColor="White" BackgroundColor="SkyBlue" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+            <ImageButton Source="camry.png" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Clicked="Camry_Clicked" HeightRequest="200" WidthRequest="200" HorizontalOptions="Start"/>
+            <Label Text="Camry $130PD" TextColor="SkyBlue"  Grid.Row="4" Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
 
-            </StackLayout>
+            
         </Grid>
            
        
-        <Button  Text="More Cars" Clicked="Morecar_Clicked" Grid.Row="1" Margin="0,10,0,0" FontSize="Large" TextColor="OrangeRed"/>
+        <Button  Text="More Cars" Clicked="Morecar_Clicked" Grid.Row="1" Margin="0,10,0,0" FontSize="Large" TextColor="White" BackgroundColor="SkyBlue"/>
     </Grid>
 
 </ContentPage>

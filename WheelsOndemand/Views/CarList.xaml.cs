@@ -12,46 +12,56 @@ public partial class CarList : ContentPage
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
         await Navigation.PushAsync(new Payment());
+
     }
-    private void Ram_Click(object sender, EventArgs e)
+    private async void Ram_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void Mazda_Click(object sender, EventArgs e)
+    private async void Mazda_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void Dough_Click(object sender, EventArgs e)
+    private async void Dough_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void NissanRough_Click(object sender, EventArgs e)
+    private async void NissanRough_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void BMW_Click(object sender, EventArgs e)
+    private async void BMW_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void Lembergini_Click(object sender, EventArgs e)
+    private async void Lembergini_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void Mercedes_Click(object sender, EventArgs e)
+    private async void Mercedes_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new Payment());
     }
-    private void Home_Click(object sender, EventArgs e)
+    private async void Home_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new TopDeals());
+    
     }
 
 }

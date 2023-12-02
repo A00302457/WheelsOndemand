@@ -12,12 +12,13 @@ public partial class Payment : ContentPage
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
-        
-        //await ScrollMode.Auto
+
+        await Navigation.PushAsync(new TopDeals());
     }
-    private void Submit_Click(object sender, EventArgs e)
+    private async void Submit_Click(object sender, EventArgs e)
     {
 
         //SemanticScreenReader.Announce(CounterBtn.Text);
+        await Navigation.PushAsync(new UserLoginSuccessful());
     }
 }
