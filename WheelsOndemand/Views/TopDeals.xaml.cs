@@ -13,18 +13,21 @@ public partial class TopDeals : ContentPage
     }
     private async void Rav4_Clicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new Payment());
     }
     private async void Camry_Clicked(object sender, EventArgs e)
     {
+        await Navigation.PushAsync(new Payment());
 
     }
     private async void Elentra_Clicked(object sender, EventArgs e)
     {
+        await Navigation.PushAsync(new Payment());
 
     }
     private async void Rough_Clicked(object sender, EventArgs e)
     {
+        await Navigation.PushAsync(new Payment());
 
     }
     

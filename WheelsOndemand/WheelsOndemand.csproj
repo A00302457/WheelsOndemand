@@ -88,6 +88,12 @@
 	  <MauiXaml Update="Views\CarList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Car_Info.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Create_Account.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Payment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

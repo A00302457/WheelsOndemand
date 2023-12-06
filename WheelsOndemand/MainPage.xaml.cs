@@ -30,10 +30,10 @@ namespace WheelsOndemand
             await Navigation.PushAsync(new TopDeals());
 
         }
-        private void CreateAccountButton_Click(object sender, EventArgs e)
+        private async void CreateAccountButton_Click(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new Create_Account ());
 
-            
         }
         private void BookNowButton_Click(object sender, EventArgs e)
         {

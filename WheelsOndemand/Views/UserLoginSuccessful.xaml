@@ -12,3 +12,8 @@
         <Button Text="Exit" HorizontalOptions="Center" Margin="0,10,0,0" Clicked="Exit_Clicked"  BackgroundColor="SkyBlue" />
     </VerticalStackLayout>
 </ContentPage>
+    
+    
+    
+    
+    
