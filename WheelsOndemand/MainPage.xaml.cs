@@ -22,7 +22,7 @@ namespace WheelsOndemand
                 return;
 
             conn = new SQLiteConnection(_dbPath);
-            conn.CreateTable<User_Info>();
+            conn.CreateTable<User>();
         }
 
         private async void SignInButton_Click(object sender, EventArgs e)
@@ -30,10 +30,10 @@ namespace WheelsOndemand
             await Navigation.PushAsync(new TopDeals());
 
         }
-        private async void CreateAccountButton_Click(object sender, EventArgs e)
+        private void CreateAccountButton_Click(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Create_Account ());
 
+            
         }
         private void BookNowButton_Click(object sender, EventArgs e)
         {

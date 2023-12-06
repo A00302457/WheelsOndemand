@@ -17,22 +17,22 @@ namespace WheelsOndemand.Models
     //Email: A string value that represents the email address of the user. Phone: A string value that represents the phone number of the user.
     //Address: A string value that represents the address of the user. By creating an instance of the User_Info class for each user in your application,
     //you can store all the relevant information about the user in one place.This can make it easier to manage your users and keep track of their information.
-    [SQLite.Table("User_Info")]
-    public class User_Info
+    [SQLite.Table("Users")]
+    public class User
     {
-        public bool IsAdmin { get; set; }
+       
        
         [PrimaryKey, AutoIncrement]
-        public int User_Id { get; set; }
+        public int Id { get; set; }
        
         [MaxLength(50),Unique,NotNull]
-        public string User_Name { get; set; }
-       
+        public string Username { get; set; }
+        public bool IsAdmin { get; set; }
         [MaxLength(8),NotNull]
         public string Password { get; set; }
         
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
         [Unique,NotNull,MaxLength(10)]
