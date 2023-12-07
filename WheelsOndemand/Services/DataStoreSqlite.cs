@@ -66,13 +66,13 @@ namespace WheelsOndemand.Services
         public async Task<Car> GetCarAsync(int id)
         {
             await Init();
-            return await Database.Table<Car>().Where(i => i.Id == id).FirstOrDefaultAsync();
+            return await Database.Table<Car>().Where(i => i.Carid == id).FirstOrDefaultAsync();
         }
 
         public async Task<int> SaveCarAsync(Car car)
         {
             await Init();
-            if (car.Id != 0)
+            if (car.Carid != 0)
             {
                 return await Database.UpdateAsync(car);
             }
@@ -97,13 +97,13 @@ namespace WheelsOndemand.Services
         public async Task<User> GetUserAsync(int id)
         {
             await Init();
-            return await Database.Table<User>().Where(i => i.Id == id).FirstOrDefaultAsync();
+            return await Database.Table<User>().Where(i => i.Userid == id).FirstOrDefaultAsync();
         }
 
         public async Task<int> SaveUserAsync(User user)
         {
             await Init();
-            if (user.Id != 0)
+            if (user.Userid != 0)
             {
                 return await Database.UpdateAsync(user);
             }
