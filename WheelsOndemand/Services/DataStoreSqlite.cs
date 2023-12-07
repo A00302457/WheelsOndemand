@@ -39,13 +39,21 @@ namespace WheelsOndemand.Services
 
         private async Task InsertSampleData()
         {
-            await SaveCarAsync(new Car() {  Brand="Rav 4", Image="rav4.png", Model="2020", Price=100, Year=2020 });
-            await SaveCarAsync(new Car() { Brand = "Rav 5", Image = "rav4.png", Model = "2020", Price = 100, Year = 2020 });
-            await SaveCarAsync(new Car() { Brand = "Rav 6", Image = "rav4.png", Model = "2020", Price = 100, Year = 2020 });
-            await SaveCarAsync(new Car() { Brand = "Rav 7", Image = "rav4.png", Model = "2020", Price = 100, Year = 2020 });
-            await SaveCarAsync(new Car() { Brand = "Rav 8", Image = "rav4.png", Model = "2020", Price = 100, Year = 2020 });
-            await SaveUserAsync(new User() {  Firstname="abc", Lastname="xyz" });
-            await SaveUserAsync(new User() { Firstname = "abc1", Lastname = "xyz1" });
+            await SaveCarAsync(new Car() { Model = "Rav 4", Image="rav4.png", Price=100, Year=2020 });
+            await SaveCarAsync(new Car() { Model = "Audi", Image = "audi.jpg", Price = 110 , Year = 2022 });
+            await SaveCarAsync(new Car() { Model = "Ram", Image = "ram.jpg", Price = 100, Year = 2019 });
+            await SaveCarAsync(new Car() { Model = "Mazda", Image = "mazda.jpg", Price = 90, Year = 2018 });
+            await SaveCarAsync(new Car() { Model = "Dough", Image = "dough.jpg", Price = 120, Year = 2021 });
+            await SaveCarAsync(new Car() { Model = "Rough", Image = "nissanrough.jpg", Price = 100, Year = 2020 });
+            await SaveCarAsync(new Car() { Model = "BMW", Image = "bmw.jpg", Price = 150, Year = 2022 });
+            await SaveCarAsync(new Car() { Model = "Lembergini", Image = "lembergini.jpg", Price = 200, Year = 2019 });
+            await SaveCarAsync(new Car() { Model = "Mercedes", Image = "mercedes.jpg", Price = 180, Year = 2020 });
+            await SaveCarAsync(new Car() { Model = "Rough", Image = "rough.png", Price = 90, Year = 2021 });
+            await SaveCarAsync(new Car() { Model = "Elentra", Image = "elentra.png", Price = 110, Year = 2020 });
+            await SaveCarAsync(new Car() { Model = "Camry", Image = "camry.png", Price = 130, Year = 2020 });
+            await SaveUserAsync(new User() {  Firstname="Pooja", Lastname="Rathod" });
+            await SaveUserAsync(new User() { Firstname = "Gurkirpal", Lastname = "Singh" });
+            await SaveUserAsync(new User() { Firstname = "Koushik", Lastname = "Reddy" });
 
         }
 

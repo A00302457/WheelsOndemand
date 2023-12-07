@@ -23,7 +23,7 @@ namespace WheelsOndemand.Models
        
        
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int Userid { get; set; }
        
         [MaxLength(50),Unique,NotNull]
         public string Username { get; set; }

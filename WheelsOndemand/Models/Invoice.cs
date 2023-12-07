@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace WheelsOndemand.Models
 {
@@ -12,18 +13,20 @@ namespace WheelsOndemand.Models
         By creating an instance of the Invoive_Info class for each invoice in application, 
         you can store all the relevant information about the invoice in one place.This can make it easier 
         to manage your invoices and keep track of their information.*/
-    internal class Invoive_Info
+    [SQLite.Table("Invoices")]
+    internal class Invoice
     {
-        public int invoice_Id { get; set; }
-        public int User_id {  get; set; }
-        public string Pickup_Date {  get; set; }
-        public string Pickup_Time {  get; set; }
-        public string Return_Date { get; set; }
-        public string Return_Time { get; set; }        
+        [PrimaryKey, AutoIncrement]
+        public int Invoiceid { get; set; }
+        public int Userid {  get; set; }
+        public string Pickupdate {  get; set; }
+        public string Pickuptime {  get; set; }
+        public string Returndate { get; set; }
+        public string Returntime { get; set; }        
         public float Price {  get; set; }
         public float Tax {  get; set; }
-        public float Final_Price {  get; set; } 
-        public int Car_Id { get; set; }
-        public int Payment_Card_Id {  get; set; }
+        public float Finalprice {  get; set; } 
+        public int Carid { get; set; }
+        public int Paymentcardid {  get; set; }
     }
 }

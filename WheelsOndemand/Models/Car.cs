@@ -14,7 +14,7 @@ namespace WheelsOndemand.Models
     public class Car
     {
         [PrimaryKey, AutoIncrement]
-        public int Id{get; set; }
+        public int Carid{get; set; }
         public string Image { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
