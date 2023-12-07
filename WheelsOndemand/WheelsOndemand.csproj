@@ -59,6 +59,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="OldFiles\Admin_Login.xaml.cs" />
+	  <Compile Remove="OldFiles\Create_Account.xaml.cs" />
+	  <Compile Remove="OldFiles\Payment.xaml.cs" />
+	  <Compile Remove="OldFiles\TopDeals.xaml.cs" />
+	  <Compile Remove="OldFiles\UserLoginSuccessful.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="OldFiles\Admin_Login.xaml" />
+	  <MauiXaml Remove="OldFiles\Create_Account.xaml" />
+	  <MauiXaml Remove="OldFiles\Payment.xaml" />
+	  <MauiXaml Remove="OldFiles\TopDeals.xaml" />
+	  <MauiXaml Remove="OldFiles\UserLoginSuccessful.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\Audi.jpg" />
 	  <None Remove="Resources\Images\BMW.jpg" />
 	  <None Remove="Resources\Images\camry.png" />
@@ -81,24 +97,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Admin_Login.xaml">
+	  <MauiXaml Update="Views\CarListView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CarList.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Create_Account.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Payment.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\TopDeals.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\UserLoginSuccessful.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="OldFiles\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\CarListView.xaml.cs">
+	    <DependentUpon>CarListView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\LoginView.xaml.cs">
+	    <DependentUpon>LoginView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

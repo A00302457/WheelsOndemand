@@ -13,13 +13,11 @@ namespace WheelsOndemand.ViewModels
         public ObservableCollection<Car> Cars { get; set; }
 
         public IAsyncRelayCommand GetCommand { get; }
-        
         public IAsyncRelayCommand SelectCommand { get; }
 
         public CarListViewModel()
         {
             GetCommand = new AsyncRelayCommand(Get);
-            
             SelectCommand = new AsyncRelayCommand<Car>(Select);
         }
 
@@ -29,11 +27,9 @@ namespace WheelsOndemand.ViewModels
             OnPropertyChanged(nameof(Cars));
         }
 
-       
-
         private async Task Select(Car car)
         {
-            await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
+            //await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
         }
     }
 }

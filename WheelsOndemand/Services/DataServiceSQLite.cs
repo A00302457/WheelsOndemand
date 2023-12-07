@@ -26,6 +26,8 @@ namespace WheelsOndemand.Services
         {
             if (_database == null)
             {
+                File.Delete(DatabaseFile); //This is a temporary line to delete the database every time. Remove this line to retain data.
+
                 _database = new SQLiteAsyncConnection(DatabaseFile, Flags);
 
                 if (!File.Exists(DatabaseFile))
@@ -48,9 +50,9 @@ namespace WheelsOndemand.Services
 
 
                     await _database.CreateTableAsync<User>();
-                    await SaveAsync(new User() { Firstname = "Pooja", Lastname = "Rathod" });
-                    await SaveAsync(new User() { Firstname = "Gurkirpal", Lastname = "Singh" });
-                    await SaveAsync(new User() { Firstname = "Koushik", Lastname = "Reddy" });
+                    await SaveAsync(new User() { Firstname = "Pooja", Lastname = "Rathod", Username = "pooja", Password = "rathod", IsAdmin = true });
+                    await SaveAsync(new User() { Firstname = "Gurkirpal", Lastname = "Singh", Username = "gurkirpal", Password = "singh", IsAdmin = true });
+                    await SaveAsync(new User() { Firstname = "Koushik", Lastname = "Reddy", Username = "koushik", Password = "reddy", IsAdmin = false });
                 }
             }
         }

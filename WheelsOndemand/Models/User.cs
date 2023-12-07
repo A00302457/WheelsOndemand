@@ -28,14 +28,12 @@ namespace WheelsOndemand.Models
         [MaxLength(50),Unique,NotNull]
         public string Username { get; set; }
         public bool IsAdmin { get; set; }
-        [MaxLength(8),NotNull]
         public string Password { get; set; }
         
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
-        [Unique,NotNull,MaxLength(10)]
         public string Phone { get; set; }
         public string Address { get; set; }
        

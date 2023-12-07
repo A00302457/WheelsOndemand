@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WheelsOndemand.Views.CarList" 
+             x:Class="WheelsOndemand.Views.CarListView" 
              xmlns:viewmodels="clr-namespace:WheelsOndemand.ViewModels"  
-             xmlns:models="clr-namespace:WheelsOndemand.Models"            
-             Title="CarList">
+             xmlns:models="clr-namespace:WheelsOndemand.Models"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="CarListView">
 
     <ContentPage.BindingContext>
         <viewmodels:CarListViewModel/>
@@ -17,7 +18,7 @@
     <StackLayout>
         <!-- CollectionView to display the list of activities -->
         <CollectionView x:Name="ActivitiesCollectionView" 
-                        ItemsSource="{Binding Activities}"
+                        ItemsSource="{Binding Cars}"
                         SelectionMode="Single" 
                         SelectionChangedCommand="{Binding SelectCommand}"
                         SelectionChangedCommandParameter="{Binding
@@ -26,7 +27,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Car">
                     <StackLayout Orientation="Horizontal" Padding="10">
-                        <Label Text="{Binding Name}" FontSize="Medium"/>
+                        <Label Text="{Binding Model}" FontSize="Medium"/>
                         <!-- Add other activity properties here as needed -->
                     </StackLayout>
                 </DataTemplate>
