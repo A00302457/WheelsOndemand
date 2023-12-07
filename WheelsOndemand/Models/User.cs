@@ -18,12 +18,12 @@ namespace WheelsOndemand.Models
     //Address: A string value that represents the address of the user. By creating an instance of the User_Info class for each user in your application,
     //you can store all the relevant information about the user in one place.This can make it easier to manage your users and keep track of their information.
     [SQLite.Table("Users")]
-    public class User
+    public class User : IEntity
     {
        
        
         [PrimaryKey, AutoIncrement]
-        public int Userid { get; set; }
+        public int Id { get; set; }
        
         [MaxLength(50),Unique,NotNull]
         public string Username { get; set; }

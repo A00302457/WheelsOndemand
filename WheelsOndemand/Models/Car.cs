@@ -11,10 +11,10 @@ namespace WheelsOndemand.Models
     //These properties can be used to store information about the cars available for rent, such as their brand,
     //model, year, image, and price per day.
     [SQLite.Table("Cars")]
-    public class Car
+    public class Car : IEntity
     {
         [PrimaryKey, AutoIncrement]
-        public int Carid{get; set; }
+        public int Id{get; set; }
         public string Image { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }

@@ -13,10 +13,10 @@ namespace WheelsOndemand.Models
     // you can store all the relevant information about the payment card in one place.This can make it easier
     // to manage your payment cards and keep track of their information.
     [SQLite.Table("Payments")]
-    internal class Payment
+    internal class Payment : IEntity
     {
         [PrimaryKey, AutoIncrement]
-        public int Paymentcardid { get; set; }
+        public int Id { get; set; }
         public int Userid {  get; set; }
         public int number {  get; set; }
         public string Name { get; set; }

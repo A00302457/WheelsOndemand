@@ -3,55 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WheelsOndemand.Views.CarList" 
              xmlns:viewmodels="clr-namespace:WheelsOndemand.ViewModels"  
-             xmlns:models="clr-namespace:WheelsOndemand.Models"
-            
+             xmlns:models="clr-namespace:WheelsOndemand.Models"            
              Title="CarList">
 
     <ContentPage.BindingContext>
         <viewmodels:CarListViewModel/>
     </ContentPage.BindingContext>
 
-    
+    <ContentPage.Behaviors>
+        <mct:EventToCommandBehavior Command="{Binding GetCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
 
-    <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <CollectionView Grid.Row="0"
-                ItemsSource="{Binding Cars}"
-                SelectionMode="Single"
-                SelectionChangedCommand="{Binding SelectCommand}"
-                SelectionChangedCommandParameter="{Binding
+    <StackLayout>
+        <!-- CollectionView to display the list of activities -->
+        <CollectionView x:Name="ActivitiesCollectionView" 
+                        ItemsSource="{Binding Activities}"
+                        SelectionMode="Single" 
+                        SelectionChangedCommand="{Binding SelectCommand}"
+                        SelectionChangedCommandParameter="{Binding
                 Source={RelativeSource Self},
                 Path=SelectedItem}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Car">
-                        <HorizontalStackLayout Padding="10">
-                            <VerticalStackLayout VerticalOptions="Center">
-                                <Label Text="{Binding Brand}"></Label>
-                                <Label Text="{Binding Image}"></Label>
-                                <Label Text="{Binding Model}"></Label>
-                            </VerticalStackLayout>
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <Button Grid.Row="0"
-                Text="+"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                Margin="0,0,30,30"
-                Command="{Binding AddCommand}"
-                FontSize="Large"
-                BackgroundColor="DodgerBlue"
-                TextColor="White"
-                CornerRadius="25"
-                HeightRequest="50"
-                WidthRequest="50" 
-                ZIndex="100"/>
-        </Grid>
-    </ContentPage.Content>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Car">
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label Text="{Binding Name}" FontSize="Medium"/>
+                        <!-- Add other activity properties here as needed -->
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

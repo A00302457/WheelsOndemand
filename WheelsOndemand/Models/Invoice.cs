@@ -14,10 +14,10 @@ namespace WheelsOndemand.Models
         you can store all the relevant information about the invoice in one place.This can make it easier 
         to manage your invoices and keep track of their information.*/
     [SQLite.Table("Invoices")]
-    internal class Invoice
+    internal class Invoice : IEntity
     {
         [PrimaryKey, AutoIncrement]
-        public int Invoiceid { get; set; }
+        public int Id { get; set; }
         public int Userid {  get; set; }
         public string Pickupdate {  get; set; }
         public string Pickuptime {  get; set; }

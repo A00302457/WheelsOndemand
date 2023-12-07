@@ -1,52 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-
-﻿using WheelsOndemand.Services;
+﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MvvmHelpers;
-using System.Collections.ObjectModel;
-using System.Windows.Input;
 using WheelsOndemand.Models;
+using WheelsOndemand.Services;
 
 namespace WheelsOndemand.ViewModels
 {
-    internal class CarListViewModel
+    public class CarListViewModel : ObservableRecipient
     {
-        public IDataStore SqliteDataStore => DependencyService.Get<IDataStore>();
-        public ObservableRangeCollection<Car> Cars { get; set; }
-        public ICommand PageAppearingCommand { get; set; }
-        public ICommand SelectCommand { get; }
-        public ICommand AddCommand { get; }
+        protected static DataServiceSQLite Database => DataServiceSQLite.Instance;
+
+        public ObservableCollection<Car> Cars { get; set; }
+
+        public IAsyncRelayCommand GetCommand { get; }
+        
+        public IAsyncRelayCommand SelectCommand { get; }
 
         public CarListViewModel()
         {
-            Cars = new ObservableRangeCollection<Car>();
-            PageAppearingCommand = new AsyncRelayCommand(PageAppearing);
-            SelectCommand = new AsyncRelayCommand<Car>(SelectAsync);
-            AddCommand = new AsyncRelayCommand(AddAsync);
+            GetCommand = new AsyncRelayCommand(Get);
+            
+            SelectCommand = new AsyncRelayCommand<Car>(Select);
         }
 
-        private async Task SelectAsync(Car car)
+        private async Task Get()
         {
-            if (car != null)
-                await Shell.Current.GoToAsync($"{nameof(Views.Payment)}?id={car.Carid}");
+            Cars = await Database.GetAsync<Car>();
+            OnPropertyChanged(nameof(Cars));
         }
 
-        private async Task AddAsync()
-        {
-            await Shell.Current.GoToAsync(nameof(Views.Payment));
-        }
+       
 
-        public async Task Refresh()
+        private async Task Select(Car car)
         {
-            var cars = await SqliteDataStore.GetCarsAsync();
-            //Cars.Clear();
-            //Cars.AddRange(new List<Car>(cars.Select(car => new Car(car))));
-        }
-
-        public async Task PageAppearing()
-        {
-            await Refresh();
+            await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
         }
     }
 }
