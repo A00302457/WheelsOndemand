@@ -14,5 +14,22 @@
         Title="CarListView"
         ContentTemplate="{DataTemplate views:CarListView}"
         Route="CarListView" />
+    <ShellContent
+        Title="Payment"
+        ContentTemplate="{DataTemplate views:Payment}"
+        Route="Payment" />
+    <ShellContent
+        Title="Topdeals"
+        ContentTemplate="{DataTemplate views:TopDeals}"
+        Route="TopDeals" />
+    <ShellContent
+        Title="CreateAccount"
+        ContentTemplate="{DataTemplate views:CreateAccount}"
+        Route="CreateAccount" />
+    <ShellContent
+        Title="AdminLogin"
+        ContentTemplate="{DataTemplate views:AdminLogin}"
+        Route="AdminLogin" />
+
 
 </Shell>

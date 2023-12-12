@@ -29,7 +29,7 @@ namespace WheelsOndemand.ViewModels
 
         private async Task Select(Car car)
         {
-            //await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
+            await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
         }
     }
 }

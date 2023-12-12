@@ -14,24 +14,34 @@
     <ContentPage.Behaviors>
         <mct:EventToCommandBehavior Command="{Binding GetCommand}" EventName="Appearing" />
     </ContentPage.Behaviors>
-
-    <StackLayout>
-        <!-- CollectionView to display the list of activities -->
-        <CollectionView x:Name="ActivitiesCollectionView" 
+    <ScrollView>
+        <StackLayout>
+            <Label Text="WheelsOnDemand" FontSize="Large" TextColor="OrangeRed" />
+            <!-- CollectionView to display the list of activities -->
+            <CollectionView x:Name="ActivitiesCollectionView" 
                         ItemsSource="{Binding Cars}"
                         SelectionMode="Single" 
                         SelectionChangedCommand="{Binding SelectCommand}"
                         SelectionChangedCommandParameter="{Binding
                 Source={RelativeSource Self},
                 Path=SelectedItem}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Car">
-                    <StackLayout Orientation="Horizontal" Padding="10">
-                        <Label Text="{Binding Model}" FontSize="Medium"/>
-                        <!-- Add other activity properties here as needed -->
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </StackLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Car">
+
+                        <StackLayout HorizontalOptions="Start">
+                            <Label/>
+                            <Image Source="{Binding Image}" HorizontalOptions="Start" HeightRequest="100" WidthRequest="100"/>
+                            <Label Text="{Binding Model, StringFormat='Model: {0} | Brand: {1} | Year: {2} | Price: {3}'}" FontSize="Small" TextColor="OrangeRed"/>
+                            
+                            <Label Text="{Binding Year, StringFormat='Year: {0}'}" FontSize="Small" TextColor="OrangeRed"/>
+
+                            <Label Text="{Binding Price, StringFormat='Price: ${0} Per Day'}" FontSize="Small" TextColor="OrangeRed"/>
+                            <!-- <Button Text="Select" HorizontalOptions="Start" Margin="0,10,0,0" BackgroundColor="SkyBlue" Padding="3,10,10,10" /> -->
+                            <!-- Add other activity properties here as needed -->
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

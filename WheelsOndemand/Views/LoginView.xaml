@@ -21,13 +21,13 @@
 
             <!-- Sign In Panel -->
 
-            <Label Text="Username" FontAttributes="Bold" TextColor="OrangeRed" />
+            <Label Text="Username"  FontAttributes="Bold" TextColor="OrangeRed" />
             <Entry  x:Name="UsernameTextBox" Margin="0,5,0,10" TextColor="Blue" />
             <Label Text="Password" FontAttributes="Bold" TextColor="OrangeRed"/>
             <Entry IsPassword="True" x:Name="PasswordBox" Margin="0,5,0,10"/>
-            <Button Text="Sign In" HorizontalOptions="Center" Margin="0,10,0,0" Command="{Binding SignInCommand}" BackgroundColor="SkyBlue" />
+            <Button Text="Sign In" HorizontalOptions="Center" Margin="0,10,0,0" Clicked="SigninClicked" Command="{Binding SignInCommand}" BackgroundColor="SkyBlue" />
             <Button Text="Create New Account" HorizontalOptions="Center" Margin="0,10,0,0"  Command="{Binding CreateAccountCommand}"
-                    BackgroundColor="skyBlue"/>
+                     BackgroundColor="skyBlue" Clicked="CreateNewAccountClicked"/>
             <Label Text="Contact Us" HorizontalOptions="Center" Margin="0,10,0,0" TextColor="OrangeRed" FontSize="Medium"/>
             <Label Text="wheelondemand@cars.ca" HorizontalOptions="Center" Margin="0,10,0,0" TextColor="OrangeRed"/>
 

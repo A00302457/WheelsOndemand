@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:WheelsOndemand.ViewModels" 
+             x:Class="WheelsOndemand.Views.Payment"
+             x:DataType="viewmodels:PaymentViewModel"
+             Title="Payment">
+    <ContentPage.BindingContext>
+        <viewmodels:PaymentViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+
+    
+        <!-- Title and Logo -->
+        <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Margin="10,0,0,0">
+
+
+
+
+
+
+            <!-- Sign In Panel -->
+            <Label Text="{Binding Payment.Carname}" FontAttributes="Bold" TextColor="OrangeRed" />
+            
+            <Label Text="First Name" FontAttributes="Bold" TextColor="OrangeRed" />
+            <Entry  x:Name="First_name" Text="{Binding Payment.FirstName}" Margin="0,5,0,10"/>
+            <Label Text="Last Name" FontAttributes="Bold" TextColor="OrangeRed"/>
+            <Entry  x:Name="Last_name" Text="{Binding Payment.LastName}" Margin="0,5,0,10"/>
+            <Label Text="Mobile Number" FontAttributes="Bold" TextColor="OrangeRed" />
+            <Entry  x:Name="MobileNumber" MaxLength="10" Text="{Binding Payment.MobileNumber}"  Margin="0,5,0,10"/>
+            <Label Text="Email" FontAttributes="Bold" TextColor="OrangeRed"/>
+            <Entry  x:Name="Email" Text="{Binding Payment.Email}" Margin="0,5,0,10" />
+
+            <Label Text="Address" FontAttributes="Bold" TextColor="OrangeRed" />
+            <Entry  x:Name="address" Text="{Binding Payment.Address}" Margin="0,5,0,10"/>
+            <Label Text="Pickup Date" FontAttributes="Bold" TextColor="OrangeRed"/>
+            <DatePicker x:Name="Pickup_Date" BindingContext="{Binding Payment.PickupDate}" Margin="0,5,0,10"/>
+            <TimePicker x:Name="timepicker" BindingContext="{Binding Payment.PickupTime}" Margin="0,5,0,10"/>
+            <Label Text="Return Date" FontAttributes="Bold" TextColor="OrangeRed" />
+            <DatePicker  x:Name="Return_Date" BindingContext="{Binding Payment.ReturnDate}" Margin="0,5,0,10"/>
+            <TimePicker x:Name="timepicker2" BindingContext="{Binding Payment.ReturnTime}" Margin="0,5,0,10"/>
+
+
+            <Label Text="Card Number" FontAttributes="Bold" TextColor="OrangeRed" />
+            <Entry  x:Name="Card_number" MaxLength="16" Text="{Binding Payment.CardNumber}" Margin="0,5,0,10" />
+            <Label Text="Expairy Date" FontAttributes="Bold" TextColor="OrangeRed" />
+            <DatePicker  x:Name="e_date" BindingContext="{Binding Payment.ExpiryDate}"  Margin="0,5,0,10"/>
+            <Label Text="CVV" FontAttributes="Bold" TextColor="OrangeRed"/>
+            <Entry  x:Name="CVV" MaxLength="3" Text="{Binding Payment.CVC}" Margin="0,5,0,10" />
+
+            <Label Text="Comments" FontAttributes="Bold" TextColor="OrangeRed"/>
+            <Entry  x:Name="Comment" Text="{Binding Payment.Comment}"  Margin="0,5,0,10"  />
+
+
+
+            <Button Text="Home" HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="SkyBlue" />
+            <Button Text="Submit"  HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="skyBlue"/>
+
+        </StackLayout>
+
+        <!-- Main Panel -->
+
+
+    </ScrollView>
+</ContentPage>

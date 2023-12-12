@@ -26,8 +26,8 @@ namespace WheelsOndemand.Services
         {
             if (_database == null)
             {
-                File.Delete(DatabaseFile); //This is a temporary line to delete the database every time. Remove this line to retain data.
-
+                //File.Delete(DatabaseFile); //This is a temporary line to delete the database every time. Remove this line to retain data.
+                
                 _database = new SQLiteAsyncConnection(DatabaseFile, Flags);
 
                 if (!File.Exists(DatabaseFile))
@@ -36,7 +36,7 @@ namespace WheelsOndemand.Services
                     await _database.CreateTableAsync<Car>();                
 
 
-                    await SaveAsync(new Car() { Model = "Rav 4", Image = "rav4.png", Price = 100, Year = 2020 });
+                    await SaveAsync(new Car() { Brand = "Toyota", Model = "Rav 4", Image = "rav4.png", Price = 100, Year = 2020 });
                     await SaveAsync(new Car() { Model = "Audi", Image = "audi.jpg", Price = 110, Year = 2022 });
                     await SaveAsync(new Car() { Model = "Ram", Image = "ram.jpg", Price = 100, Year = 2019 });
                     await SaveAsync(new Car() { Model = "Mazda", Image = "mazda.jpg", Price = 90, Year = 2018 });
