@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
+
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using WheelsOndemand.Models;
@@ -8,7 +9,7 @@ using WheelsOndemand.Views;
 
 namespace WheelsOndemand.ViewModels
 {
-    public class LoginViewModel : ObservableRecipient
+    public class CreateAccountViewModel : ObservableRecipient
     {
         private string _email;
         public string Email
@@ -32,6 +33,17 @@ namespace WheelsOndemand.ViewModels
             }
         }
 
+        private string _confirmPassword;
+        public string ConfirmPassword
+        {
+            get { return _confirmPassword; }
+            set
+            {
+                _confirmPassword = value;
+                OnPropertyChanged(nameof(ConfirmPassword));
+            }
+        }
+
 
         private string _message;
         public string Message
@@ -48,51 +60,50 @@ namespace WheelsOndemand.ViewModels
 
 
         protected static DataServiceSQLite Database => DataServiceSQLite.Instance;
-        protected static AuthenticationserviceFirebase Authentication => AuthenticationserviceFirebase.Instance;
+       protected static AuthenticationserviceFirebase Authentication => AuthenticationserviceFirebase.Instance;
 
         public IAsyncRelayCommand AppearingCommand { get; }
-        public IAsyncRelayCommand SignInCommand { get; }
         public IAsyncRelayCommand CreateAccountCommand { get; }
 
+        public IAsyncRelayCommand CancelCommand { get; }
 
-        public LoginViewModel()
+        public CreateAccountViewModel()
         {
             AppearingCommand = new AsyncRelayCommand(Appearing);
-            SignInCommand = new AsyncRelayCommand(SignIn);
             CreateAccountCommand = new AsyncRelayCommand(CreateAccount);
+            CancelCommand = new AsyncRelayCommand(Cancel);
         }
+
 
         private async Task Appearing()
         {
             Email = "";
             Password = "";
+            ConfirmPassword = "";
         }
 
-        //CYA ActivityListView and ActivityListViewModel -> AdminCarListView and AdminCarListViewModel
-        //CYA ActivityDetailView and ActivityDetailViewModel -> AdminCarDetailView and AdminCarDetailViewModel
-
-        private async Task SignIn()
-        {
-            var (success, message) = await Authentication.SignInAsync(Email, Password);
-            Message = message;
-
-            if (success)
-            {
-                var users = new List<User>(await Database.GetAsync<User>());
-                
-                User currentUser = users.Find(user => user.Email == Email);
-
-                if (currentUser != null && currentUser.IsAdmin)
-                {
-                    // Go to AdminCarListView
-
-                }
-                await Shell.Current.GoToAsync($"///{nameof(Views.CarListView)}");
-            }
-        }
         private async Task CreateAccount()
         {
-            await Shell.Current.GoToAsync($"///{nameof(Views.CreateAccountView)}");
+            if (Password == ConfirmPassword)
+            {
+                var (success, message) = await Authentication.SignUpAsync(Email, Password);
+                Message = message;
+
+                if (success)
+                {
+                    await Database.SaveAsync<User>(new User() { Email = Email, IsAdmin = false });
+                    await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
+                }
+            }
+            else
+            {
+                Message = "The two passwords are different.";
+            }
+        }
+        private async Task Cancel()
+        {
+
+            await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
 
         }
     }

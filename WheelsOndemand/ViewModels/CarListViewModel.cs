@@ -12,16 +12,16 @@ namespace WheelsOndemand.ViewModels
 
         public ObservableCollection<Car> Cars { get; set; }
 
-        public IAsyncRelayCommand GetCommand { get; }
+        public IAsyncRelayCommand AppearingCommand { get; }
         public IAsyncRelayCommand SelectCommand { get; }
 
         public CarListViewModel()
         {
-            GetCommand = new AsyncRelayCommand(Get);
+            AppearingCommand = new AsyncRelayCommand(Appearing);
             SelectCommand = new AsyncRelayCommand<Car>(Select);
         }
 
-        private async Task Get()
+        private async Task Appearing()
         {
             Cars = await Database.GetAsync<Car>();
             OnPropertyChanged(nameof(Cars));

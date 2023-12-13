@@ -1,8 +1,8 @@
 ﻿namespace WheelsOndemand.Views
 {
-    public partial class LoginView : ContentPage
+    public partial class CreateAccountView : ContentPage
     {
-        public LoginView()
+        public CreateAccountView()
         {
             InitializeComponent();
         }

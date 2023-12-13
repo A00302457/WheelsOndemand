@@ -12,7 +12,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Behaviors>
-        <mct:EventToCommandBehavior Command="{Binding GetCommand}" EventName="Appearing" />
+        <mct:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
     </ContentPage.Behaviors>
     <ScrollView>
         <StackLayout>

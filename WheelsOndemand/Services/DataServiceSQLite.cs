@@ -50,9 +50,8 @@ namespace WheelsOndemand.Services
 
 
                     await _database.CreateTableAsync<User>();
-                    await SaveAsync(new User() { Firstname = "Pooja", Lastname = "Rathod", Username = "pooja", Password = "rathod", IsAdmin = true });
-                    await SaveAsync(new User() { Firstname = "Gurkirpal", Lastname = "Singh", Username = "gurkirpal", Password = "singh", IsAdmin = true });
-                    await SaveAsync(new User() { Firstname = "Koushik", Lastname = "Reddy", Username = "koushik", Password = "reddy", IsAdmin = false });
+                    await SaveAsync(new User() { Email = "nathan.abourbih@cambriancollege.ca", IsAdmin = true });
+
                 }
             }
         }

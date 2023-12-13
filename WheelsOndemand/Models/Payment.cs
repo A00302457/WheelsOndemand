@@ -37,5 +37,6 @@ namespace WheelsOndemand.Models
         public float Finalprice { get; set; }
         public int Carid { get; set; }
         public string Carname { get; set; }
+       
     }
 }
