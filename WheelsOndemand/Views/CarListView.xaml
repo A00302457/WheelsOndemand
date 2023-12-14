@@ -17,6 +17,7 @@
     <ScrollView>
         <StackLayout>
             <Label Text="WheelsOnDemand" FontSize="Large" TextColor="OrangeRed" />
+            <Button Text="Add Car" Command="{Binding AddCommand}" IsVisible="{Binding IsAdmin}"/>
             <!-- CollectionView to display the list of activities -->
             <CollectionView x:Name="ActivitiesCollectionView" 
                         ItemsSource="{Binding Cars}"
@@ -25,6 +26,10 @@
                         SelectionChangedCommandParameter="{Binding
                 Source={RelativeSource Self},
                 Path=SelectedItem}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Car">
 
@@ -32,7 +37,7 @@
                             <Label/>
                             <Image Source="{Binding Image}" HorizontalOptions="Start" HeightRequest="100" WidthRequest="100"/>
                             <Label Text="{Binding Model, StringFormat='Model: {0} | Brand: {1} | Year: {2} | Price: {3}'}" FontSize="Small" TextColor="OrangeRed"/>
-                            
+
                             <Label Text="{Binding Year, StringFormat='Year: {0}'}" FontSize="Small" TextColor="OrangeRed"/>
 
                             <Label Text="{Binding Price, StringFormat='Price: ${0} Per Day'}" FontSize="Small" TextColor="OrangeRed"/>

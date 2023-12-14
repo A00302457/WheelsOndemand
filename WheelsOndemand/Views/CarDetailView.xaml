@@ -1,0 +1,41 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:WheelsOndemand.ViewModels"
+             x:Class="WheelsOndemand.Views.CarDetailsView"
+              xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="viewmodels:CarDetailsViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodels:CarDetailsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <mct:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+    
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Entry x:Name="Image" 
+                   Placeholder="Car Image"
+                   Text="{Binding Car.Image}"/>
+            <Entry x:Name="Brand" 
+       Placeholder="Car Brand"
+       Text="{Binding Car.Brand}"/>
+            <Entry x:Name="Model" 
+       Placeholder="Car Model"
+       Text="{Binding Car.Model}"/>
+            <Entry x:Name="Year" 
+       Placeholder="Car Year"
+       Text="{Binding Car.Year}"/>
+            <Entry x:Name="Price" 
+       Placeholder="Car Price"
+       Text="{Binding Car.Price}"/>
+            <Button Text="Save Car" 
+                    Command="{Binding SaveCommand}"/>
+            <Button Text="Delete Car" 
+                    Command="{Binding DeleteCommand}"/>
+            <Button Text="Cancel" 
+                    Command="{Binding CancelCommand}"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

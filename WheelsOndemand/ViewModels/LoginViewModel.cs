@@ -80,9 +80,10 @@ namespace WheelsOndemand.ViewModels
             {
                 var users = new List<User>(await Database.GetAsync<User>());
                 
-                User currentUser = users.Find(user => user.Email == Email);
+                LoginSession.LoggedInUser = users.Find(user => user.Email == Email);
 
-                if (currentUser != null && currentUser.IsAdmin)
+
+                if (LoginSession.LoggedInUser != null && LoginSession.LoggedInUser.IsAdmin)
                 {
                     // Go to AdminCarListView
 

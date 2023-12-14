@@ -64,6 +64,7 @@
 	  <Compile Remove="OldFiles\Payment.xaml.cs" />
 	  <Compile Remove="OldFiles\TopDeals.xaml.cs" />
 	  <Compile Remove="OldFiles\UserLoginSuccessful.xaml.cs" />
+	  <Compile Remove="ViewModels\AdminCarListViewModel.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -98,7 +99,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\AdminLogin.xaml">
+	  <MauiXaml Update="Views\CarDetailView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\CarListView.xaml">
@@ -120,6 +121,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\CarDetailView.xaml.cs">
+	    <DependentUpon>CarDetailView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\CarListView.xaml.cs">
 	    <DependentUpon>CarListView.xaml</DependentUpon>
 	  </Compile>

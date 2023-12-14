@@ -27,9 +27,8 @@
         ContentTemplate="{DataTemplate views:CreateAccountView}"
         Route="CreateAccountView" />
     <ShellContent
-        Title="AdminLogin"
-        ContentTemplate="{DataTemplate views:AdminLogin}"
-        Route="AdminLogin" />
-
+        Title="CarDetailsView"
+        ContentTemplate="{DataTemplate views:CarDetailsView}"
+        Route="CarDetailsView" />
 
 </Shell>

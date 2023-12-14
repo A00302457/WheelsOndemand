@@ -16,7 +16,7 @@ namespace WheelsOndemand.Services
             SQLite.SQLiteOpenFlags.Create |
             SQLite.SQLiteOpenFlags.SharedCache;
 
-        private static string DatabaseFile => Path.Combine(FileSystem.AppDataDirectory, "Data.db3");
+        private static string DatabaseFile => Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "..\\..\\..\\..\\..\\..\\Data.db3");
 
         private DataServiceSQLite()
         {
@@ -30,6 +30,7 @@ namespace WheelsOndemand.Services
                 
                 _database = new SQLiteAsyncConnection(DatabaseFile, Flags);
 
+                /*
                 if (!File.Exists(DatabaseFile))
                 {
                     //Create tables and add sample data if needed.
@@ -50,9 +51,9 @@ namespace WheelsOndemand.Services
 
 
                     await _database.CreateTableAsync<User>();
-                    await SaveAsync(new User() { Email = "nathan.abourbih@cambriancollege.ca", IsAdmin = true });
 
                 }
+                */
             }
         }
 
