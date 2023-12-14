@@ -27,7 +27,7 @@ The WheelsOnDemand rental car app is free.
 
 Cloud Services Utilized:
 - Firebase
-- Microsoft Azure Cloud Service
+- SqLite Database
 
 Competing Apps:
 - Enterprise Rent-A-Car
