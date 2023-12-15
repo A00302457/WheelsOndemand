@@ -6,5 +6,5 @@ public partial class Payment : ContentPage
 	{
 		InitializeComponent();
 	}
-   
+    
 }

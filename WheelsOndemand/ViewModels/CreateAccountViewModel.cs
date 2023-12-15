@@ -105,6 +105,7 @@ namespace WheelsOndemand.ViewModels
                     else
                     {
                         await Database.SaveAsync<User>(new User() { Email = Email, IsAdmin = false });
+                        await Application.Current.MainPage.DisplayAlert("Success", "User acoount successfully created..", "OK");
                         await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
                     }
                 }

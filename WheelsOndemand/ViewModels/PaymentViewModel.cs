@@ -37,8 +37,9 @@ namespace WheelsOndemand.ViewModels
         {
             //await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
              var id = await Database.SaveAsync<Payment>(_payment);
-            await Application.Current.MainPage.DisplayAlert("Success", "Submitted successfully", "OK");
-            await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.CarListView)}");
+            //await Application.Current.MainPage.DisplayAlert("Success", "Submitted successfully", "OK");
+           // await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.PaymentSuccessful)}");
+            await Shell.Current.GoToAsync($"///{nameof(Views.PaymentSuccessful)}");
         }
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)

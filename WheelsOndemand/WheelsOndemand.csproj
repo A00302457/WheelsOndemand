@@ -79,6 +79,8 @@
 	  <None Remove="Resources\Images\Audi.jpg" />
 	  <None Remove="Resources\Images\BMW.jpg" />
 	  <None Remove="Resources\Images\camry.png" />
+	  <None Remove="Resources\Images\caranimation.gif" />
+	  <None Remove="Resources\Images\caranimation1.gif" />
 	  <None Remove="Resources\Images\Dough.jpg" />
 	  <None Remove="Resources\Images\elentra.png" />
 	  <None Remove="Resources\Images\Lembergini.jpg" />
@@ -112,9 +114,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PaymentSuccessful.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\TopDeals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

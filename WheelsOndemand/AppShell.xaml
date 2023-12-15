@@ -4,7 +4,11 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
     xmlns:views="clr-namespace:WheelsOndemand.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled" >
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="True" />
+    </Shell.BackButtonBehavior>
+
 
     <ShellContent
         Title="LoginView"
@@ -18,10 +22,7 @@
         Title="Payment"
         ContentTemplate="{DataTemplate views:Payment}"
         Route="Payment" />
-    <ShellContent
-        Title="Topdeals"
-        ContentTemplate="{DataTemplate views:TopDeals}"
-        Route="TopDeals" />
+   
     <ShellContent
         Title="CreateAccountView"
         ContentTemplate="{DataTemplate views:CreateAccountView}"
@@ -33,6 +34,5 @@
     <ShellContent
      Title="PaymentSuccessful"
      ContentTemplate="{DataTemplate views:PaymentSuccessful}"
-     Route="PaymentSucessful" />
-
+     Route="PaymentSuccessful" />
 </Shell>

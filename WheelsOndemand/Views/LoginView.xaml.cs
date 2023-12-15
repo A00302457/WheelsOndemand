@@ -5,7 +5,8 @@
         public LoginView()
         {
             InitializeComponent();
+
+          
         }
-        
     }
 }

@@ -30,6 +30,7 @@
                 <!--<Entry.Behaviors>                    
                     <local:CharacterValidationBehavior />
                 </Entry.Behaviors>-->
+                
             </Entry>
             <Label Text="Last Name" FontAttributes="Bold" TextColor="OrangeRed"/>
             <Entry  x:Name="Last_name" Text="{Binding Payment.LastName}" Margin="0,5,0,10"/>

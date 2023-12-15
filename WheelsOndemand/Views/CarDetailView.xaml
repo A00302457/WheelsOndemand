@@ -10,32 +10,32 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Behaviors>
-        <mct:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+        <mct:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing"  />
     </ContentPage.Behaviors>
     
     <ScrollView>
         <StackLayout Padding="20">
-            <Entry x:Name="Image" 
-                   Placeholder="Car Image"
-                   Text="{Binding Car.Image}"/>
-            <Entry x:Name="Brand" 
-       Placeholder="Car Brand"
-       Text="{Binding Car.Brand}"/>
+            <Image x:Name="Image" 
+                   
+                   Source="{Binding Car.Image}" HeightRequest="200" WidthRequest="500"/>
+            <Label Text="Model" TextColor="OrangeRed"></Label>
             <Entry x:Name="Model" 
        Placeholder="Car Model"
        Text="{Binding Car.Model}"/>
+            <Label Text="Year" TextColor="OrangeRed"></Label>
             <Entry x:Name="Year" 
        Placeholder="Car Year"
        Text="{Binding Car.Year}"/>
+            <Label Text="Price Per day" TextColor="OrangeRed"></Label>
             <Entry x:Name="Price" 
        Placeholder="Car Price"
        Text="{Binding Car.Price}"/>
             <Button Text="Save Car" 
-                    Command="{Binding SaveCommand}"/>
+                    Command="{Binding SaveCommand}" TextColor="White" BackgroundColor="SkyBlue" WidthRequest="150"/>
             <Button Text="Delete Car" 
-                    Command="{Binding DeleteCommand}"/>
+                    Command="{Binding DeleteCommand}" TextColor="White" BackgroundColor="SkyBlue" WidthRequest="150"/>
             <Button Text="Cancel" 
-                    Command="{Binding CancelCommand}"/>
+                    Command="{Binding CancelCommand}" TextColor="White" BackgroundColor="SkyBlue" WidthRequest="150"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
