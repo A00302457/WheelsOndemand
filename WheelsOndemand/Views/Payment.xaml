@@ -26,13 +26,16 @@
             <Label Text="{Binding Payment.Carname}" FontAttributes="Bold" TextColor="OrangeRed" />
             
             <Label Text="First Name" FontAttributes="Bold" TextColor="OrangeRed" />
-            <Entry  x:Name="First_name" Text="{Binding Payment.FirstName}" Margin="0,5,0,10"/>
+            <Entry  x:Name="First_name" Text="{Binding Payment.FirstName}" Margin="0,5,0,10">
+                <!--<Entry.Behaviors>                    
+                    <local:CharacterValidationBehavior />
+                </Entry.Behaviors>-->
+            </Entry>
             <Label Text="Last Name" FontAttributes="Bold" TextColor="OrangeRed"/>
             <Entry  x:Name="Last_name" Text="{Binding Payment.LastName}" Margin="0,5,0,10"/>
             <Label Text="Mobile Number" FontAttributes="Bold" TextColor="OrangeRed" />
             <Entry  x:Name="MobileNumber" MaxLength="10" Text="{Binding Payment.MobileNumber}"  Margin="0,5,0,10"/>
-            <Label Text="Email" FontAttributes="Bold" TextColor="OrangeRed"/>
-            <Entry  x:Name="Email" Text="{Binding Payment.Email}" Margin="0,5,0,10" />
+           
 
             <Label Text="Address" FontAttributes="Bold" TextColor="OrangeRed" />
             <Entry  x:Name="address" Text="{Binding Payment.Address}" Margin="0,5,0,10"/>
@@ -55,9 +58,9 @@
             <Entry  x:Name="Comment" Text="{Binding Payment.Comment}"  Margin="0,5,0,10"  />
 
 
-            <Button Text="Submit"  HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="skyBlue" Clicked="SubmitClicked"/>
+            <Button Text="Submit"  HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="skyBlue"  Command="{Binding InsertCommand}"/>
 
-            <Button Text="Home" HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="SkyBlue" Clicked="HomeClicked"/>
+            <Button Text="Home" HorizontalOptions="Center" Margin="0,10,0,0" BackgroundColor="SkyBlue"/>
            
         </StackLayout>
 

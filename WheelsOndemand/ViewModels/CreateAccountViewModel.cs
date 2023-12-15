@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Diagnostics;
-
+using CommunityToolkit.Maui.Core.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using WheelsOndemand.Models;
@@ -84,15 +84,29 @@ namespace WheelsOndemand.ViewModels
 
         private async Task CreateAccount()
         {
+           // bool IsAdmin = false;
             if (Password == ConfirmPassword)
             {
+                Email = Email.ToLower().Trim();
+
                 var (success, message) = await Authentication.SignUpAsync(Email, Password);
                 Message = message;
 
                 if (success)
                 {
-                    await Database.SaveAsync<User>(new User() { Email = Email, IsAdmin = false });
-                    await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
+                    if (Email.EndsWith("@wod.com"))
+                    {
+                        // Check if the email ends with "@wod.com"
+                        //  return Email.EndsWith("@wod.com", StringComparison.OrdinalIgnoreCase);
+                        await Database.SaveAsync<User>(new User() { Email = Email, IsAdmin = true });
+                        await Application.Current.MainPage.DisplayAlert("Success", "Admin acoount successfully created.. Welcome Admin", "OK");
+                        await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
+                    }
+                    else
+                    {
+                        await Database.SaveAsync<User>(new User() { Email = Email, IsAdmin = false });
+                        await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
+                    }
                 }
             }
             else
@@ -106,5 +120,6 @@ namespace WheelsOndemand.ViewModels
             await Shell.Current.GoToAsync($"///{nameof(Views.LoginView)}");
 
         }
+       
     }
 }

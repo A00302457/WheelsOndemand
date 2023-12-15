@@ -2,7 +2,7 @@
 using Firebase.Auth;
 using Firebase.Auth.Providers;
 using Microsoft.Extensions.Configuration;
-
+using WheelsOndemand.Services;
 namespace WheelsOndemand.Services
 {
     public class AuthenticationserviceFirebase
@@ -20,7 +20,7 @@ namespace WheelsOndemand.Services
         {
             var config = new FirebaseAuthConfig
             {
-               ApiKey = AppSettings.FirebaseApiKey,
+                ApiKey = AppSettings.FirebaseApiKey,
                 AuthDomain = AppSettings.FirebaseAuthDomain,
                 Providers = new FirebaseAuthProvider[]
                 {

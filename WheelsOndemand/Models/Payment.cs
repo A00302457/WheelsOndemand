@@ -19,19 +19,31 @@ namespace WheelsOndemand.Models
         public int Id { get; set; }
         public int Userid { get; set; }
         public int PaymentNumber { get; set; }
+        [MaxLength(20),NotNull]
         public string FirstName { get; set; }
+        [MaxLength(20),NotNull]
         public string LastName { get; set; }
+        [MaxLength(10),NotNull]
         public int MobileNumber { get; set; }
-        public string Email { get; set; }
+        [NotNull,MaxLength(75)]
         public string Address { get; set; }
+        [MaxLength(3),NotNull] 
         public int CVC { get; set; }
+        [MaxLength(16),NotNull]
         public int CardNumber { get; set; }
+        [MaxLength(200)]
         public string Comment {  get; set; }
-        public string ExpiryDate { get; set; }
-        public string PickupDate { get; set; }
-        public string PickupTime { get; set; }
-        public string ReturnDate { get; set; }
-        public string ReturnTime { get; set; }
+        [NotNull]
+        public DateTime ExpiryDate { get; set; }
+        [NotNull]
+        public DateTime PickupDate { get; set; }
+        [NotNull]
+        public DateTime PickupTime { get; set; }
+        [NotNull]
+        public DateTime ReturnDate { get; set; }
+        [NotNull]
+        public DateTime ReturnTime { get; set; }
+        [NotNull]
         public float Price { get; set; }
         public float Tax { get; set; }
         public float Finalprice { get; set; }

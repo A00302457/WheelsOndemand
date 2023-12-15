@@ -26,7 +26,7 @@
             <!-- Sign In Panel -->
 
             <Label Text="Email"  FontAttributes="Bold" TextColor="OrangeRed" />
-            <Entry Text="{Binding Email}" Margin="0,5,0,10" TextColor="Blue" />
+            <Entry Text="{Binding Email}" Margin="0,5,0,10" TextColor="Blue"/>
             <Label Text="Password" FontAttributes="Bold" TextColor="OrangeRed"/>
             <Entry IsPassword="True" Text="{Binding Password}" Margin="0,5,0,10"/>
             <Label Text="Confirm Password" FontAttributes="Bold" TextColor="OrangeRed"/>

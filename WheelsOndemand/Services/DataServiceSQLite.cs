@@ -24,8 +24,8 @@ namespace WheelsOndemand.Services
 
         private async Task Init()
         {
-            if (_database == null)
-            {
+           // if (_database == null)
+            //{
                 //File.Delete(DatabaseFile); //This is a temporary line to delete the database every time. Remove this line to retain data.
                 
                 _database = new SQLiteAsyncConnection(DatabaseFile, Flags);
@@ -54,7 +54,9 @@ namespace WheelsOndemand.Services
 
                 }
                 */
-            }
+                await _database.CreateTableAsync<Payment>();
+            //}
+
         }
 
         public async Task<ObservableCollection<T>> GetAsync<T>() where T : new()

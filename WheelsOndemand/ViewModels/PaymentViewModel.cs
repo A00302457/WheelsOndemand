@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using WheelsOndemand.Models;
@@ -29,12 +30,15 @@ namespace WheelsOndemand.ViewModels
 
         public PaymentViewModel()
         {
-            InsertCommand = new AsyncRelayCommand<Payment>(Insert);
+            InsertCommand = new AsyncRelayCommand(Insert);
         }
 
-        private async Task Insert(Payment payment)
+        private async Task Insert()
         {
             //await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.Payment)}?id={car.Id}");
+             var id = await Database.SaveAsync<Payment>(_payment);
+            await Application.Current.MainPage.DisplayAlert("Success", "Submitted successfully", "OK");
+            await Shell.Current.GoToAsync($"///{nameof(WheelsOndemand.Views.CarListView)}");
         }
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)

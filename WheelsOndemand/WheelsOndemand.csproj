@@ -111,6 +111,9 @@
 	  <MauiXaml Update="Views\Payment.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PaymentSuccessful.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\TopDeals.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
