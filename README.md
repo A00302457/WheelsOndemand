@@ -43,7 +43,7 @@ Competing Apps:
 - Simplify the car rental process
 - Designed with simplicity in mind
 
-information_source: This application is primarily designed as a learning resource for students during in-class activities. It is not intended to be a fully-fledged product. The creation of this app involved the use of several resources, listed below:
+information_source: The creation of this app involved the use of several resources, listed below:
 
 -https://learn.microsoft.com/en-us/training/paths/build-apps-with-dotnet-maui/
 
